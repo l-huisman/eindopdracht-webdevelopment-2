@@ -9,7 +9,7 @@
       <router-link to="/get-started" class="router-link">Get Started For Free</router-link>
     </nav>
   </header>
-  <main class="px-10 py-5 flex-1">
+  <main class="px-10 py-5 flex flex-1 flex-col justify-center">
     <h2 class="text-2xl">Welcome to the Calendar App</h2>
     <p class="text-lg mt-1">This is a simple calendar app built with Vue 3 and Vite.</p>
     <div class=" text-white mt-5">
