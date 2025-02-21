@@ -74,7 +74,7 @@ const showPassword = (event: Event) => {
   <main class="h-svh flex justify-center items-center">
     <div
       class="w-sm px-10 py-5 flex flex-col justify-center items-center gap-5 bg-gray-50 drop-shadow-sm">
-      <h1 class="text-2xl">Register</h1>
+      <h1 class="text-2xl">Get Started</h1>
       <form class="flex flex-col gap-3">
         <div class="flex flex-col gap-1">
           <label class="text-sm" for="username">Username</label>
@@ -120,7 +120,7 @@ const showPassword = (event: Event) => {
         </div>
         <button @click.prevent="register" class="my-2 bg-cyan-900 py-2.5 text-white">Register
         </button>
-        <router-link to="/login" class="text-center text-cyan-900 my-2">Already have a password?
+        <router-link to="/login" class="text-sm text-center text-cyan-900 my-2">Already have a account? Login
         </router-link>
       </form>
     </div>
