@@ -51,7 +51,7 @@ const showPassword = () => {
 
 <template>
   <main class="h-svh flex justify-center items-center">
-    <div class="w-sm px-10 py-5 flex  flex-col justify-center gap-5 bg-gray-50 drop-shadow-sm">
+    <div class="w-sm px-10 py-5 flex flex-col justify-center items-center gap-5 bg-gray-50 drop-shadow-sm">
       <h1 class="text-2xl">Login</h1>
       <form class="flex flex-col gap-3">
         <div class="flex flex-col gap-1">
@@ -61,7 +61,7 @@ const showPassword = () => {
         </div>
         <div>
           <label class="text-sm" for="password">Password</label>
-          <div class="border-2 border-gray-300 flex items-center gap-2">
+          <div class="border-2 border-gray-300 flex items-center gap-0.5">
             <input v-model="password" class="p-2" type="password"
                    id="password"/>
             <button class="text-sm h-10 w-16 hover:bg-gray-300 bg-gray-200 active:bg-gray-400"
@@ -70,13 +70,15 @@ const showPassword = () => {
           </div>
           <label id="passwordError" class="text-sm text-red-600" for="passwordError"></label>
         </div>
+        <router-link to="/forgot-password" class="text-sm text-cyan-900">Forgot password?</router-link>
         <div class="flex items-center gap-2 mt-1">
           <input v-model="rememberMe" type="checkbox" id="remember-me"/>
           <label class="text-sm" for="remember-me">Remember me</label>
         </div>
-        <button @click.prevent="login" class="mt-3 mb-3 bg-cyan-900 py-2.5 text-white">Login
+        <button @click.prevent="login" class=" my-2 bg-cyan-900 py-2.5 text-white">Login
         </button>
       </form>
+      <router-link to="/get-started" class="text-sm text-cyan-900 my-2">Don't have an account? Register</router-link>
     </div>
   </main>
 </template>
