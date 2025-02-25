@@ -1,14 +1,10 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 
+import NavigationBar from "@/views/NavigationBar.vue";
 </script>
 
 <template>
-  <header class="flex justify-between items-center px-10 py-5 bg-gray-50 drop-shadow-sm">
-    <h1 class="text-2xl">Calendar App</h1>
-    <nav>
-      <router-link to="/get-started" class="router-link">Get Started For Free</router-link>
-    </nav>
-  </header>
+  <NavigationBar/>
   <main class="px-10 py-5 flex flex-1 flex-col justify-center">
     <h2 class="text-2xl">Welcome to the Calendar App</h2>
     <p class="text-lg mt-1">This is a simple calendar app built with Vue 3 and Vite.</p>
@@ -21,11 +17,3 @@
   </footer>
 </template>
 
-<style scoped>
-.router-link {
-  border: var(--color-cyan-900) 1px solid;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  margin-left: 1rem;
-}
-</style>

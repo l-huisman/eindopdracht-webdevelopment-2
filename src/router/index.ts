@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from "@/views/LoginView.vue";
 import NotFoundView from "@/views/NotFoundView.vue";
 import RegisterView from "@/views/RegisterView.vue";
+import ForgotPasswordView from "@/views/ForgotPasswordView.vue";
+import TermsAndConditionsView from "@/views/TermsAndConditionsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,22 +12,33 @@ const router = createRouter({
     {
       name: 'home',
       path: '/',
-      component: HomeView
+      component: HomeView,
     },
     {
       name: 'login',
       path: '/login',
-      component: LoginView
+      component: LoginView,
+    },
+    {
+      name: 'forgot password',
+      path: '/forgot-password',
+      component: ForgotPasswordView,
     },
     {
       name: 'register',
       path: '/get-started',
-      component: RegisterView
+      component: RegisterView,
+    },
+    {
+      name: 'terms and conditions',
+      path: '/terms-and-conditions',
+      component: TermsAndConditionsView,
+
     },
     {
       name: '404',
       path: '/:pathMatch(.*)*',
-      component: NotFoundView
+      component: NotFoundView,
     }
   ],
 })
