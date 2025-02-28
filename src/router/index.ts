@@ -5,6 +5,7 @@ import NotFoundView from "@/views/NotFoundView.vue";
 import RegisterView from "@/views/RegisterView.vue";
 import ForgotPasswordView from "@/views/ForgotPasswordView.vue";
 import TermsAndConditionsView from "@/views/TermsAndConditionsView.vue";
+import CalendarView from "@/views/CalendarView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,11 @@ const router = createRouter({
       path: '/terms-and-conditions',
       component: TermsAndConditionsView,
 
+    },
+    {
+      name: 'calendar',
+      path: '/calendar',
+      component: CalendarView,
     },
     {
       name: '404',

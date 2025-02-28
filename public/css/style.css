@@ -1,0 +1,207 @@
+.grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.row-span-1 {
+    grid-row-end: span 1;
+}
+
+.row-span-2 {
+    grid-row-end: span 2;
+}
+
+.row-span-3 {
+    grid-row-end: span 3;
+}
+
+.row-span-4 {
+    grid-row-end: span 4;
+}
+
+.row-span-5 {
+    grid-row-end: span 5;
+}
+
+.row-span-6 {
+    grid-row-end: span 6;
+}
+
+.row-span-7 {
+    grid-row-end: span 7;
+}
+
+.row-span-8 {
+    grid-row-end: span 8;
+}
+
+.row-span-9 {
+    grid-row-end: span 9;
+}
+
+.row-span-10 {
+    grid-row-end: span 10;
+}
+
+.row-span-11 {
+    grid-row-end: span 11;
+}
+
+.row-span-12 {
+    grid-row-end: span 12;
+}
+
+.row-span-13 {
+    grid-row-end: span 13;
+}
+
+.row-span-14 {
+    grid-row-end: span 14;
+}
+
+.row-span-15 {
+    grid-row-end: span 15;
+}
+
+.row-span-16 {
+    grid-row-end: span 16;
+}
+
+.row-span-17 {
+    grid-row-end: span 17;
+}
+
+.row-span-18 {
+    grid-row-end: span 18;
+}
+
+.row-span-19 {
+    grid-row-end: span 19;
+}
+
+.row-span-20 {
+    grid-row-end: span 20;
+}
+
+.row-span-21 {
+    grid-row-end: span 21;
+}
+
+.row-span-22 {
+    grid-row-end: span 22;
+}
+
+.row-span-23 {
+    grid-row-end: span 23;
+}
+
+.row-span-24 {
+    grid-row-end: span 24;
+}
+
+.row-start-0 {
+    grid-row-start: 0;
+}
+
+.row-start-1 {
+    grid-row-start: 1;
+}
+
+.row-start-2 {
+    grid-row-start: 2;
+}
+
+.row-start-3 {
+    grid-row-start: 3;
+}
+
+.row-start-4 {
+    grid-row-start: 4;
+}
+
+.row-start-5 {
+    grid-row-start: 5;
+}
+
+.row-start-6 {
+    grid-row-start: 6;
+}
+
+.row-start-7 {
+    grid-row-start: 7;
+}
+
+.row-start-8 {
+    grid-row-start: 8;
+}
+
+.row-start-9 {
+    grid-row-start: 9;
+}
+
+.row-start-10 {
+    grid-row-start: 10;
+}
+
+.row-start-11 {
+    grid-row-start: 11;
+}
+
+.row-start-12 {
+    grid-row-start: 12;
+}
+
+.row-start-13 {
+    grid-row-start: 13;
+}
+
+.row-start-14 {
+    grid-row-start: 14;
+}
+
+.row-start-15 {
+    grid-row-start: 15;
+}
+
+.row-start-16 {
+    grid-row-start: 16;
+}
+
+.row-start-17 {
+    grid-row-start: 17;
+}
+
+.row-start-18 {
+    grid-row-start: 18;
+}
+
+.row-start-19 {
+    grid-row-start: 19;
+}
+
+.row-start-20 {
+    grid-row-start: 20;
+}
+
+.row-start-21 {
+    grid-row-start: 21;
+}
+
+.row-start-22 {
+    grid-row-start: 22;
+}
+
+.row-start-23 {
+    grid-row-start: 23;
+}
+
+.row-start-24 {
+    grid-row-start: 24;
+}
