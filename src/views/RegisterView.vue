@@ -2,6 +2,7 @@
 import {ref} from 'vue';
 import router from "@/router";
 import NavigationBar from "@/views/NavigationBar.vue";
+import axios from "axios";
 
 const username = ref<string>('');
 const email = ref<string>('');
@@ -47,14 +48,20 @@ const register = () => {
     return;
   }
 
+  axios.post('http://localhost:3000/register', {
+    username: username.value,
+    email: email.value,
+    password: password.value,
+  }).then(response => {
+    if (response.status === 201) {
+      console.log(response.data);
+    }
+  })
+
+
   if (rememberMe.value) {
-    localStorage.setItem('password', password.value);
-    localStorage.setItem('username', username.value);
-    router.push('/calendar');
     return;
   }
-
-  router.push('/login');
 }
 
 const showPassword = (event: Event) => {

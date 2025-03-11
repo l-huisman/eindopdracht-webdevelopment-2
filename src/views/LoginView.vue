@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import axios from 'axios';
+
 import router from "@/router";
 import {ref} from 'vue';
 import NavigationBar from "@/views/NavigationBar.vue";
@@ -26,14 +28,18 @@ const login = () => {
     return;
   }
 
-  if (rememberMe.value) {
-    // Save the email and password to local storage
-    localStorage.setItem('email', email.value);
-    localStorage.setItem('password', password.value);
-  }
-
-  // Redirect to the calendar page
-  router.push('/calendar');
+  axios.post('http://localhost:3000/login', {
+    email: email.value,
+    password: password.value,
+  }).then(response => {
+    if (response.status === 200) {
+      console.log(response);
+    }
+  }).catch(error => {
+    if (error.response.status === 401) {
+      emailError.textContent = 'Invalid email or password';
+    }
+  });
 }
 
 const showPassword = () => {
