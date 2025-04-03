@@ -6,6 +6,7 @@ import RegisterView from "@/views/RegisterView.vue";
 import ForgotPasswordView from "@/views/ForgotPasswordView.vue";
 import TermsAndConditionsView from "@/views/TermsAndConditionsView.vue";
 import CalendarView from "@/views/CalendarView.vue";
+import {useAuthStore} from "@/stores/auth.ts";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,12 +35,14 @@ const router = createRouter({
       name: 'terms and conditions',
       path: '/terms-and-conditions',
       component: TermsAndConditionsView,
-
     },
     {
       name: 'calendar',
       path: '/calendar',
       component: CalendarView,
+      meta: {
+        requiresAuth: true,
+      },
     },
     {
       name: '404',
@@ -47,6 +50,19 @@ const router = createRouter({
       component: NotFoundView,
     }
   ],
+})
+
+router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore();
+
+  // Check if the user is authenticated
+  const isAuthenticated = authStore.isAuthenticated();
+
+  if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
+    next({name: 'login'});
+  } else {
+    next();
+  }
 })
 
 export default router
