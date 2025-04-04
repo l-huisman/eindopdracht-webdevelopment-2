@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import {useAuthStore} from "@/stores/auth.ts";
+
+const auth = useAuthStore();
 
 </script>
 
@@ -6,13 +9,11 @@
   <header class="flex justify-between items-center px-10 py-5 bg-gray-50 drop-shadow-sm">
     <h1 class="text-2xl">Calendar App</h1>
     <nav>
-      <router-link class="router-link" to="/login">Login</router-link>
-      <router-link class="router-link" to="/get-started">Register</router-link>
-      <router-link class="router-link" to="/admin-dashboard">Admin</router-link>
-      <router-link class="router-link" to="/calendar">Calendar</router-link>
-      <router-link class="router-link" to="/logout">Logout</router-link>
-
-      <router-link class="special-button" to="/get-started">Get Started For Free</router-link>
+      <router-link v-if="!auth.isAuthenticated()" class="router-link" to="/login">Login</router-link>
+      <router-link v-if="auth.isAdmin()" class="router-link" to="/admin-dashboard">Admin</router-link>
+      <router-link v-if="auth.isAuthenticated()" class="router-link" to="/calendar">Calendar</router-link>
+      <router-link v-if="auth.isAuthenticated()" class="router-link" to="/logout">Logout</router-link>
+      <router-link v-if="!auth.isAuthenticated()" class="special-button" to="/get-started">Get Started For Free</router-link>
     </nav>
   </header>
 </template>

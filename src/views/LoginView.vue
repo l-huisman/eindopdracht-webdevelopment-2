@@ -4,6 +4,7 @@ import axios from 'axios';
 import router from "@/router";
 import {ref} from 'vue';
 import NavigationBar from "@/views/NavigationBar.vue";
+import {useAuthStore} from "@/stores/auth.ts";
 
 const email = ref<string>('');
 const password = ref<string>('');
@@ -33,7 +34,11 @@ const login = () => {
     password: password.value,
   }).then(response => {
     if (response.status === 200) {
-      console.log(response);
+      const auth = useAuthStore();
+      auth.setId(response.data.data.id);
+      auth.setToken(response.data.data.token);
+      auth.setIsAdmin(response.data.data.admin);
+      router.push('/calendar');
     }
   }).catch(error => {
     if (error.response.status === 401) {
@@ -49,8 +54,6 @@ const showPassword = () => {
   } else {
     passwordInput.type = 'password';
   }
-
-  // Change the button text to Show or Hide
   const button = document.querySelector('button') as HTMLButtonElement;
   button.textContent = passwordInput.type === 'password' ? 'Show' : 'Hide';
 }
