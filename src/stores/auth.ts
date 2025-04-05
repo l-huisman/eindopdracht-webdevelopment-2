@@ -28,7 +28,7 @@ export const useAuthStore = defineStore('auth', () => {
     return token.value !== null;
   }
 
-  function isAdmin(){
+  function isAdmin() {
     return admin.value
   }
 

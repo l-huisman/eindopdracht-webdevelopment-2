@@ -77,8 +77,9 @@ const showPassword = () => {
             <div class="border-2 border-gray-300 flex items-center gap-0.5">
               <input id="password" v-model="password" class="p-2 w-4 flex-1"
                      type="password"/>
-              <button class="text-sm h-10 w-16 hover:bg-gray-300 bg-gray-200 active:bg-gray-400 cursor-pointer"
-                      @click.prevent="showPassword">Show
+              <button
+                class="text-sm h-10 w-16 hover:bg-gray-300 bg-gray-200 active:bg-gray-400 cursor-pointer"
+                @click.prevent="showPassword">Show
               </button>
             </div>
             <p id="passwordError" class="text-sm text-red-600"></p>
@@ -86,10 +87,11 @@ const showPassword = () => {
           <router-link class="text-sm text-cyan-900" to="/forgot-password">Forgot password?
           </router-link>
           <div class="flex items-center gap-2 mt-1">
-            <input id="remember-me" v-model="rememberMe" type="checkbox" class="cursor-pointer"/>
+            <input id="remember-me" v-model="rememberMe" class="cursor-pointer" type="checkbox"/>
             <label class="text-sm" for="remember-me">Remember me</label>
           </div>
-          <button class=" my-2 bg-cyan-900 py-2.5 text-white hover:bg-cyan-950 cursor-pointer" @click.prevent="login">Login
+          <button class=" my-2 bg-cyan-900 py-2.5 text-white hover:bg-cyan-950 cursor-pointer"
+                  @click.prevent="login">Login
           </button>
         </form>
         <router-link class="text-sm text-cyan-900 my-2" to="/get-started">Don't have an account?

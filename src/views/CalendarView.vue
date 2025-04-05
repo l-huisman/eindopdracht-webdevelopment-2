@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import {computed, ref} from 'vue';
 import NavigationBar from "@/views/NavigationBar.vue";
 import GroupSelector from "@/components/GroupSelector.vue";
@@ -78,7 +78,8 @@ const getGroupColor = (group: string) => {
   <div class="flex flex-col h-svh">
     <NavigationBar/>
     <div class="flex flex-1">
-      <GroupSelector :groups="['Group 1', 'Group 2', 'Group 3']" :selectedGroups="selectedGroups" @update:selectedGroups="val => selectedGroups = val" />
+      <GroupSelector :groups="['Group 1', 'Group 2', 'Group 3']" :selectedGroups="selectedGroups"
+                     @update:selectedGroups="val => selectedGroups = val"/>
       <main class="flex-1 flex">
         <div class="flex-1 flex justify-center items-center">
           <div class="w-full h-full pb-5 bg-white rounded-lg">

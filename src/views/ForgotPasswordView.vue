@@ -36,7 +36,8 @@ const forgotPassword = () => {
             <input id="email" v-model="email" class="border-2 p-2 border-gray-300" type="email"/>
             <p id="emailError" class="text-sm text-red-600"></p>
           </div>
-          <button class="my-2 bg-cyan-900 py-2.5 text-white cursor-pointer" @click.prevent="forgotPassword">Submit
+          <button class="my-2 bg-cyan-900 py-2.5 text-white cursor-pointer"
+                  @click.prevent="forgotPassword">Submit
           </button>
         </form>
         <router-link class="text-sm text-cyan-900 my-2" to="/login">Remembered your password? Login

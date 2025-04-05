@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import {ref, watch} from 'vue';
 
 const props = defineProps({
@@ -39,7 +39,7 @@ const getGroupColor = (group: string) => {
     <div v-for="group in groups" :key="group" class="mb-2 w-full">
       <label
         :class="`flex items-center space-x-2 py-3 rounded-lg shadow-md ${getGroupColor(group)} ${localSelectedGroups.includes(group) ? 'border-4 border-blue-500' : 'bg-gray-300'}`">
-        <input type="checkbox" :value="group" v-model="localSelectedGroups" class="hidden">
+        <input v-model="localSelectedGroups" :value="group" class="hidden" type="checkbox">
         <span class="text-white text-xl font-bold text-center w-full">{{ group }}</span>
       </label>
     </div>
