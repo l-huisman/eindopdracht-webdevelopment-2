@@ -53,11 +53,10 @@ const register = () => {
     email: email.value,
     password: password.value,
   }).then(response => {
-    if (response.status === 201) {
-      console.log(response.data);
+    if (response.status === 201){
+      router.push('/login');
     }
   })
-
 
   if (rememberMe.value) {
     return;
@@ -101,7 +100,7 @@ const showPassword = (event: Event) => {
             <label class="text-sm" for="password">Password</label>
             <div class="border-2 border-gray-300 flex items-center gap-0.5">
               <input id="password" v-model="password" class="p-2 w-4 flex-1" type="password"/>
-              <button class="text-sm h-10 w-16 hover:bg-gray-300 bg-gray-200 active:bg-gray-400"
+              <button class="text-sm h-10 w-16 hover:bg-gray-300 bg-gray-200 active:bg-gray-400 cursor-pointer"
                       @click.prevent="showPassword($event)">Show
               </button>
             </div>
@@ -112,7 +111,7 @@ const showPassword = (event: Event) => {
             <div class="border-2 border-gray-300 flex items-center gap-0.5">
               <input id="confirm-password" v-model="confirmPassword" class="p-2 w-4 flex-1"
                      type="password"/>
-              <button class="text-sm h-10 w-16 hover:bg-gray-300 bg-gray-200 active:bg-gray-400"
+              <button class="text-sm h-10 w-16 hover:bg-gray-300 bg-gray-200 active:bg-gray-400 cursor-pointer"
                       @click.prevent="showPassword($event)">Show
               </button>
             </div>
@@ -120,7 +119,7 @@ const showPassword = (event: Event) => {
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <input id="accept-terms" v-model="acceptTerms" type="checkbox"/>
+              <input id="accept-terms" v-model="acceptTerms" type="checkbox" class="cursor-pointer"/>
               <label class="text-sm" for="accept-terms">I accept to the
                 <router-link class="text-cyan-900 underline" to="/terms-and-conditions">terms and
                   conditions
@@ -130,10 +129,10 @@ const showPassword = (event: Event) => {
             <p id="termsError" class="text-sm text-red-600"></p>
           </div>
           <div class="flex items-center gap-2">
-            <input id="remember-me" v-model="rememberMe" type="checkbox"/>
+            <input id="remember-me" v-model="rememberMe" type="checkbox" class="cursor-pointer"/>
             <label class="text-sm" for="remember-me">Remember me</label>
           </div>
-          <button class="my-2 bg-cyan-900 py-2.5 text-white" @click.prevent="register">Register
+          <button class="my-2 bg-cyan-900 py-2.5 text-white cursor-pointer" @click.prevent="register">Register
           </button>
           <router-link class="text-sm text-center text-cyan-900 my-2" to="/login">Already have a
             account? Login
