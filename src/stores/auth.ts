@@ -6,6 +6,10 @@ export const useAuthStore = defineStore('auth', () => {
   const token = ref<string | null>(null);
   const admin = ref<boolean>(false);
 
+  function getId(): number | null {
+    return id.value;
+  }
+
   function setId(newId: number) {
     id.value = newId;
   }
@@ -32,5 +36,5 @@ export const useAuthStore = defineStore('auth', () => {
     return admin.value
   }
 
-  return {token, setId, setToken, setIsAdmin, clear, isAuthenticated, isAdmin};
+  return {token, getId, setId, setToken, setIsAdmin, clear, isAuthenticated, isAdmin};
 });
