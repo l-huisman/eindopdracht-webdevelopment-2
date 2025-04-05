@@ -7,6 +7,7 @@ import ForgotPasswordView from "@/views/ForgotPasswordView.vue";
 import TermsAndConditionsView from "@/views/TermsAndConditionsView.vue";
 import CalendarView from "@/views/CalendarView.vue";
 import {useAuthStore} from "@/stores/auth.ts";
+import LogoutView from "@/views/LogoutView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +44,11 @@ const router = createRouter({
       meta: {
         requiresAuth: true,
       },
+    },
+    {
+      name: 'logout',
+      path: '/logout',
+      component: LogoutView,
     },
     {
       name: '404',
